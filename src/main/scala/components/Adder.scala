@@ -13,7 +13,8 @@ class Adder(val n:Int) extends Module {
     })
 
     io.Cout := 0.asUInt(1.W)
-    io.Sum := 0.asUInt(n.W) //io.inputA + io.inputB
+    io.Sum := io.inputA + io.inputB
+    //io.Sum := 0.asUInt(n.W)
 }
 
 /**

@@ -10,3 +10,12 @@ project/plugins/project/
 .history
 .cache
 .lib/
+
+# Chisel Generated Folders
+
+test_run_dir/
+
+
+# Project Organization Folder
+
+output/
