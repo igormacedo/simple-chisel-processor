@@ -10,15 +10,15 @@ SBT = sbt
 
 
 # Generate Verilog code
-
-adder:
-	$(SBT) "runMain components.Adder -td=output/adder"
+zero:
+	$(SBT) "runMain components.Zero -td=output/Zero"
 	# creates firrtl and verilog file and saves to output/adder
 
 
 # Generate the C++ simulation and run the tests
+zero-test-main:
+	$(SBT) "test:runMain components.ZeroMain"
 
-adder-test:
-	$(SBT) "test:runMain components.AdderTester"
-
+zero-test-repl:
+	$(SBT) "test:runMain components.ZeroRepl"
 
