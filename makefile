@@ -8,12 +8,11 @@
 
 SBT = sbt
 
-
+## STARTER EXAMPLE
 # Generate Verilog code
 zero:
 	$(SBT) "runMain components.Zero -td=output/Zero"
 	# creates firrtl and verilog file and saves to output/adder
-
 
 # Generate the C++ simulation and run the tests
 zero-test-main:
@@ -22,3 +21,13 @@ zero-test-main:
 zero-test-repl:
 	$(SBT) "test:runMain components.ZeroRepl"
 
+
+## Components
+mux1bit:
+	$(SBT) "runMain components.Mux1bit -td=output/Mux1bit"
+
+mux1bit-test-main:
+	$(SBT) "test:runMain components.Mux1bitMain"
+
+mux1bit-test-repl:
+	$(SBT) "test:runMain components.Mux1bitRepl"

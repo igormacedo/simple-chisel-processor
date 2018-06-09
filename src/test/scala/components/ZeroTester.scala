@@ -13,6 +13,7 @@ class ZeroUnitTester(c: Zero) extends PeekPokeTester(c) {
 
 }
 
+/** 
 class ZeroTester extends ChiselFlatSpec {
     "Basic test using Driver.execute" should "be used as an alternative way to run specification" in {
         iotesters.Driver.execute(Array(), () => new Zero(2)) {
@@ -20,6 +21,7 @@ class ZeroTester extends ChiselFlatSpec {
         } should be (true)
     }
 }
+**/
 
 /**
   * This provides an alternate way to run tests, by executing then as a main
