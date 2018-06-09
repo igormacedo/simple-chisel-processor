@@ -25,6 +25,7 @@ https://github.com/freechipsproject/chisel3/wiki/Chisel3-vs-Chisel2
 https://github.com/freechipsproject/chisel3/wiki/Running-Stuff
 https://github.com/freechipsproject/chisel3/wiki/frequently-asked-questions
 https://github.com/freechipsproject/chisel3/wiki/Debugging-with-the-Interpreter-REPL-1
+https://github.com/ccelio/chisel-style-guide
 
 
 

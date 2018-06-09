@@ -9,6 +9,7 @@ class Zero(val n:Int) extends Module {
         val Cout   = Output(UInt(n.W))
     })
 
+    printf("\ninput = %d\n\n", io.inputA)
     io.Cout := 0.asUInt(n.W)
 }
 

@@ -31,3 +31,13 @@ mux1bit-test-main:
 
 mux1bit-test-repl:
 	$(SBT) "test:runMain components.Mux1bitRepl"
+
+
+muxNinNbits:
+	$(SBT) "runMain components.MuxNinNbits -td=output/MuxNinNbits"
+
+muxNinNbits-test-main:
+	$(SBT) "test:runMain components.MuxNinNbitsMain"
+
+muxNinNbits-test-repl:
+	$(SBT) "test:runMain components.MuxNinNbitsRepl"
