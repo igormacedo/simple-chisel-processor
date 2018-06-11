@@ -1,5 +1,7 @@
 scalaVersion := "2.11.12"
 
+scalacOptions := Seq("-unchecked", "-deprecation")
+
 resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots"),
   Resolver.sonatypeRepo("releases")

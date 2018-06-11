@@ -7,37 +7,36 @@
 # sbt creates per default a ./target folder
 
 SBT = sbt
+TEST=0
+REPL=0
 
 ## STARTER EXAMPLE
 # Generate Verilog code
-zero:
-	$(SBT) "runMain components.Zero -td=output/Zero"
-	# creates firrtl and verilog file and saves to output/adder
+
+# creates firrtl and verilog file and saves to output/$@
+Zero:
+	$(SBT) "runMain components.$@ -td=output/$@"
 
 # Generate the C++ simulation and run the tests
-zero-test-main:
-	$(SBT) "test:runMain components.ZeroMain"
+ZeroMain:
+	$(SBT) "test:runMain components.$@"
 
-zero-test-repl:
-	$(SBT) "test:runMain components.ZeroRepl"
-
-
-## Components
-mux1bit:
-	$(SBT) "runMain components.Mux1bit -td=output/Mux1bit"
-
-mux1bit-test-main:
-	$(SBT) "test:runMain components.Mux1bitMain"
-
-mux1bit-test-repl:
-	$(SBT) "test:runMain components.Mux1bitRepl"
+# Start REPL firrtl simulator
+ZeroRepl:
+	$(SBT) "test:runMain components.$@"
 
 
-muxNinNbits:
-	$(SBT) "runMain components.MuxNinNbits -td=output/MuxNinNbits"
 
-muxNinNbits-test-main:
-	$(SBT) "test:runMain components.MuxNinNbitsMain"
+# General RULE
+%::
+ifeq ($(TEST), 1)
+	$(SBT) "test:runMain components.$@Main"
+endif
 
-muxNinNbits-test-repl:
-	$(SBT) "test:runMain components.MuxNinNbitsRepl"
+ifeq ($(REPL), 1)
+	$(SBT) "test:runMain components.$@Repl"
+endif
+
+ifeq ($(TEST)$(REPL), 00)
+	$(SBT) "runMain components.$@ -td=output/$@"
+endif

@@ -1,4 +1,4 @@
-##This readme file is in progress..
+## This readme file is in progress..
 
 ## Important Notes
 
@@ -16,7 +16,7 @@ Firrtl
 Verilator
 
 
-###Interesting Links
+### Interesting Links
 https://chisel.eecs.berkeley.edu/blog/?p=156
 https://github.com/freechipsproject/chisel3/wiki/chisel-toolchain
 https://github.com/freechipsproject/firrtl
@@ -29,7 +29,7 @@ https://github.com/ccelio/chisel-style-guide
 
 
 
-###A compilation of infos for later reference
+### A compilation of infos for later reference
 
 For example when running a test, the tester is invoked, which then invokes chisel3 to generate the circuit, which invokes firrtl to compile the circuit into low firrtl. After low firrtl has been generated, the firrtl-interpreter is invoked in order to execute the test on the device under test.
 
